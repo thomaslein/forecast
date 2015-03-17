@@ -229,14 +229,14 @@ var WeatherWidget = React.createClass({
     r.responseType = 'json';
     r.onload = function() {
       if(this.status === 200) {
+        console.log(this.response);
         self.setState({
-          address: address,
+          address: this.response.formatted_address,
           current: this.response.currently,
           hourly: this.response.hourly.data.slice(0, 24),
           isLoading: false,
           showSearch: false
         });
-        console.log(this.response);
       }
     };
     r.send();
