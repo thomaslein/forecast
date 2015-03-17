@@ -224,10 +224,10 @@ var WeatherWidget = React.createClass({
   },
   load: function(address) {
     var self = this;
-    var r = new XMLHttpRequest();
-    r.open('GET', '/weather/?address=' + encodeURIComponent(address), true);
-    r.responseType = 'json';
-    r.onload = function() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/weather/?address=' + encodeURIComponent(address), true);
+    xhr.responseType = 'json';
+    xhr.onload = function() {
       if(this.status === 200) {
         console.log(this.response);
         self.setState({
@@ -239,7 +239,7 @@ var WeatherWidget = React.createClass({
         });
       }
     };
-    r.send();
+    xhr.send();
     this.setState({ isLoading: true });
   },
   render: function() {
