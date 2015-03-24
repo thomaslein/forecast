@@ -26,5 +26,8 @@
     "express": "^4.12.2",
     "forecast.io": "0.0.9",
     "geocoder": "^0.2.2"
+  },
+  "dependencies": {
+    "dotenv": "^1.0.0"
   }
 }

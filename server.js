@@ -1,3 +1,4 @@
+require('dotenv').load();
 var Forecast = require('forecast.io');
 var util = require('util');
 var express = require('express');
